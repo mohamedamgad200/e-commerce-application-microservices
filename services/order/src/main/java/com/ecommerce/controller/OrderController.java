@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;
-    
     @PostMapping
     public ResponseEntity<OrderResponse>createOrder(@Valid @RequestBody OrderRequest orderRequest) {
         return null;
