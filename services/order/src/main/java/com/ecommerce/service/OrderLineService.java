@@ -8,6 +8,8 @@ import com.ecommerce.repository.OrderLineRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class OrderLineService {
@@ -17,5 +19,12 @@ public class OrderLineService {
     {
         OrderLine orderLine = orderLineMappper.toOrderLine(orderLineRequest);
         return  orderLineRepository.save(orderLine).getId();
+    }
+    public List<OrderLineResponse>findAllByOrderId(int orderId)
+    {
+        return orderLineRepository.findAllByOrderId(orderId)
+                .stream()
+                .map(this.orderLineMappper::fromOrderLine)
+                .toList();
     }
 }

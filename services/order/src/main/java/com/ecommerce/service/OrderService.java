@@ -65,6 +65,10 @@ public class OrderService {
         );
         //start payment process --> payment microservice
 
+        //todo implement the payment service
+
+        //todo implement the notification service
+
         return orderMapper.fromOrder(order);
     }
 
