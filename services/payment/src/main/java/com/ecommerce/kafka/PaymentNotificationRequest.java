@@ -1,4 +1,4 @@
-package com.ecommerce.dto;
+package com.ecommerce.kafka;
 
 import com.ecommerce.enums.PaymentMethod;
 import lombok.*;
@@ -10,10 +10,11 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PaymentRequest {
+public class PaymentNotificationRequest {
+    private String orderReference;
     private BigDecimal amount;
     private PaymentMethod paymentMethod;
-    private Integer orderId;
-    private String orderReference;
-    private Customer customer;
+    private String customerFirstname;
+    private String customerLastname;
+    private String customerEmail;
 }

@@ -28,6 +28,7 @@ public class Payment {
 
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
+
     private Integer orderId;
     @CreatedDate
     @Column(updatable = false,nullable = false)
