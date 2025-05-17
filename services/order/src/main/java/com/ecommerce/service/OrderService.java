@@ -2,6 +2,8 @@ package com.ecommerce.service;
 
 import com.ecommerce.client.customer.CustomerClient;
 import com.ecommerce.client.customer.dto.CustomerResponse;
+import com.ecommerce.client.payment.PaymentClient;
+import com.ecommerce.client.payment.dto.PaymentRequest;
 import com.ecommerce.client.product.ProductClient;
 import com.ecommerce.client.product.dto.PurchaseRequest;
 import com.ecommerce.client.product.dto.PurchaseResponse;
@@ -30,8 +32,9 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderLineService orderLineService;
     private final OrderMapper orderMapper;
-
     private final OrderProducer orderProducer;
+    private final PaymentClient paymentClient;
+
     public OrderResponse createOrder(OrderRequest orderRequest) {
         //1- check the customer --> customer microservice -->OpenFeign
         CustomerResponse customerResponse=customerClient.findCustomerById(orderRequest.getCustomerId())
@@ -64,9 +67,14 @@ public class OrderService {
                         )
         );
         //start payment process --> payment microservice
-
-        //todo implement the payment service
-
+        PaymentRequest paymentRequest= new PaymentRequest(
+                orderRequest.getAmount(),
+                orderRequest.getPaymentMethod(),
+                order.getId(),
+                order.getReference(),
+                customerResponse
+        );
+        this.paymentClient.requestOrderPayment(paymentRequest);
         //todo implement the notification service
 
         return orderMapper.fromOrder(order);
