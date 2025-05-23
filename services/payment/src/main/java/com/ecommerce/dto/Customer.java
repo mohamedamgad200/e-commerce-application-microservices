@@ -14,9 +14,9 @@ import org.springframework.validation.annotation.Validated;
 public class Customer {
     private String id;
     @NotNull(message = "Firstname is required")
-    private String firstname;
+    private String firstName;
     @NotNull(message = "Lastname is required")
-    private String lastname;
+    private String lastName;
     @NotNull(message = "Email is required")
     @Email(message = "The customer email is not correctly formatted")
     private String email;

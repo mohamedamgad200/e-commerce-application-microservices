@@ -23,8 +23,8 @@ public class PaymentService {
                         paymentRequest.getOrderReference(),
                         paymentRequest.getAmount(),
                         paymentRequest.getPaymentMethod(),
-                        paymentRequest.getCustomer().getFirstname(),
-                        paymentRequest.getCustomer().getLastname(),
+                        paymentRequest.getCustomer().getFirstName(),
+                        paymentRequest.getCustomer().getLastName(),
                         paymentRequest.getCustomer().getEmail()
                 )
         );

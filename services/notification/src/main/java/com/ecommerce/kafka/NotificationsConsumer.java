@@ -1,9 +1,8 @@
 package com.ecommerce.kafka;
 
 import com.ecommerce.entity.Notification;
-import com.ecommerce.enums.NotificationType;
 import com.ecommerce.kafka.order.OrderConfirmation;
-import com.ecommerce.kafka.payment.PaymentConfirmation;
+import com.ecommerce.kafka.payment.PaymentNotificationRequest;
 import com.ecommerce.repository.NotificationRepository;
 import com.ecommerce.service.EmailService;
 import jakarta.mail.MessagingException;
@@ -25,8 +24,8 @@ public class NotificationsConsumer {
     private final NotificationRepository notificationRepository;
     private final EmailService emailService;
 
-    @KafkaListener(topics = "payment-topic")
-    public void consumePaymentSuccessNotification(PaymentConfirmation paymentConfirmation) throws MessagingException {
+    @KafkaListener(topics = "payment-topic",groupId = "paymentGroup")
+    public void consumePaymentSuccessNotification(PaymentNotificationRequest paymentConfirmation) throws MessagingException {
         log.info(format("Consuming the message from payment-topic Topic:: %s",paymentConfirmation));
         notificationRepository.save(
                 Notification.builder()
@@ -45,7 +44,7 @@ public class NotificationsConsumer {
 
     }
 
-    @KafkaListener(topics = "order-topic")
+    @KafkaListener(topics = "order-topic",groupId ="orderGroup" )
     public void consumeOrderConfirmationNotifications(OrderConfirmation orderConfirmation) throws MessagingException  {
         log.info(format("Consuming the message from order-topic Topic:: %s", orderConfirmation));
         notificationRepository.save(
@@ -55,7 +54,7 @@ public class NotificationsConsumer {
                         .orderConfirmation(orderConfirmation)
                         .build()
         );
-        String customerName= orderConfirmation.getCustomer().getFirstname()+" "+orderConfirmation.getCustomer().getLastname();
+        String customerName= orderConfirmation.getCustomer().getFirstName()+" "+orderConfirmation.getCustomer().getLastName();
         emailService.sendOrderConfirmationEmail(
                 orderConfirmation.getCustomer().getEmail(),
                 customerName,

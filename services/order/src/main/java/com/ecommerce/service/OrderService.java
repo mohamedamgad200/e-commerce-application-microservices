@@ -75,8 +75,6 @@ public class OrderService {
                 customerResponse
         );
         this.paymentClient.requestOrderPayment(paymentRequest);
-        //todo implement the notification service
-
         return orderMapper.fromOrder(order);
     }
 

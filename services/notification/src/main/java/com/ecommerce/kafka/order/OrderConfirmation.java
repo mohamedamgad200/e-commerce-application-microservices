@@ -14,6 +14,6 @@ public class OrderConfirmation {
     private String orderReference;
     private BigDecimal totalAmount;
     private PaymentMethod paymentMethod;
-    private Customer customer;
+    private CustomerResponse customer;
     private List<Product> products;
 }
