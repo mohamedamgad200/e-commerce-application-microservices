@@ -7,7 +7,7 @@ This is a full-featured e-commerce system built using **Spring Boot 3**, **Sprin
 
 The application is composed of several microservices, each responsible for a distinct business capability. All services are loosely coupled and communicate via Kafka topics when needed.
 
-![Microservices Architecture Diagram](microservices-architecture.png)
+![Microservices Architecture Diagram](diagrams/micro-services-async-communication.drawio.png
 
 ### 📦 Microservices
 
