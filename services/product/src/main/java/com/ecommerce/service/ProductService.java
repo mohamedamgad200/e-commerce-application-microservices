@@ -4,10 +4,12 @@ import com.ecommerce.dto.ProductPurchaseRequest;
 import com.ecommerce.dto.ProductPurchaseResponse;
 import com.ecommerce.dto.ProductRequest;
 import com.ecommerce.dto.ProductResponse;
+import com.ecommerce.entity.Category;
 import com.ecommerce.entity.Product;
 import com.ecommerce.exception.ProductNotFoundException;
 import com.ecommerce.exception.ProductPurchaseException;
 import com.ecommerce.mapper.ProductMapper;
+import com.ecommerce.repository.CategoryRepository;
 import com.ecommerce.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,11 +25,16 @@ import static java.lang.String.format;
 public class ProductService {
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
+    private final CategoryRepository categoryRepository;
 
     public ProductResponse createProduct(ProductRequest productRequest) {
         Product product = productMapper.toProduct(productRequest);
         Product savedProduct = productRepository.save(product);
-        return productMapper.toProductResponse(savedProduct);
+        Category category = categoryRepository.findById(product.getCategory().getId()).orElse(null);
+        ProductResponse productResponse = productMapper.toProductResponse(savedProduct);
+        productResponse.setCategoryName(category.getName());
+        productResponse.setCategoryDescription(category.getDescription());
+        return productResponse;
     }
 
     public ProductResponse findProductById(Integer id) {

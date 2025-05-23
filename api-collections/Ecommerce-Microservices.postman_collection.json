@@ -1,0 +1,864 @@
+{
+	"info": {
+		"_postman_id": "485026ed-2caf-41cc-b968-b424bb7a53c8",
+		"name": "Ecommerce-Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33221095"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "add-customer",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"hema\",\r\n  \"lastName\": \"hema\",\r\n  \"email\": \"heamheman@example.com\",\r\n  \"address\": {\r\n    \"street\": \"zeytoon\",\r\n    \"houseNumber\": \"45\",\r\n    \"zipCode\": \"10001\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8222/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-customers",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8222/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-customer",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8222/api/v1/customers/683063f243f6ca61fa186360",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"683063f243f6ca61fa186360"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-customer",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": \"68306a2143f6ca61fa186361\",\r\n        \"firstName\": \"Liam\",\r\n        \"lastName\": \"Brown\",\r\n        \"email\": \"liam.brown@example.com\",\r\n        \"address\":  {\r\n            \"street\": \"test\",\r\n            \"houseNumber\": \"12Test\",\r\n            \"zipCode\": \"90210\"\r\n        }\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8222/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "exist-customer",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8222/api/v1/customers/exists/683063f243f6ca61fa186360",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"exists",
+								"683063f243f6ca61fa186360"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-customer",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": \"68306a2143f6ca61fa186361\",\r\n        \"firstName\": \"Liam\",\r\n        \"lastName\": \"Brown\",\r\n        \"email\": \"liam.brown@example.com\",\r\n        \"address\": \r\n        {\r\n\r\n        }\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8222/api/v1/customers/cust002",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"cust002"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "create-order",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"reference\": \"MS-20241212\",\r\n  \"amount\": 900,\r\n  \"paymentMethod\": \"PAYPAL\",\r\n  \"customerId\": \"683063f243f6ca61fa186360\",\r\n  \"products\": [\r\n    {\r\n      \"productId\": 1,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"productId\": 251,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"productId\": \"851\",\r\n      \"quantity\": 1\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8222/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8222/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"reference\": \"MS-20241212\",\r\n  \"amount\": 900,\r\n  \"paymentMethod\": \"PAYPAL\",\r\n  \"customerId\": \"683063f243f6ca61fa186360\",\r\n  \"products\": [\r\n    {\r\n      \"productId\": 1,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"productId\": 251,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"productId\": \"851\",\r\n      \"quantity\": 1\r\n    }\r\n  ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8222/api/v1/orders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "get-products",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8222/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-product",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8222/api/v1/products/51",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-product",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Bluetooth Speaker\",\r\n  \"description\": \"Wireless portable speaker with high-quality sound\",\r\n  \"availableQuantity\": 80,\r\n  \"price\": 45.50,\r\n  \"categoryId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8222/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "purchase-product",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"productId\": 1302,\r\n    \"quantity\": 2\r\n  },\r\n  {\r\n    \"productId\": 1253,\r\n    \"quantity\": 5\r\n  },\r\n  {\r\n    \"productId\": 1252,\r\n    \"quantity\": 1.5\r\n  }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8222/api/v1/products/purchase",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"purchase"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "create-payment",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "riRLHdB5C9h3GF2yJnRwyq64xzNEBZyf",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "micro-services-api",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9098/realms/micro-services/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\":\"900\",\r\n    \"paymentMethod\":\"PAYPAL\",\r\n    \"orderId\":\"1\",\r\n    \"orderReference\":\"20241212\",\r\n    \"customer\":{\r\n        \"id\": \"683063f243f6ca61fa186360\",\r\n        \"firstName\": \"Emma\",\r\n        \"lastName\": \"Johnson\",\r\n        \"email\": \"emma.johnson@example.com\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8222/api/v1/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8222",
+							"path": [
+								"api",
+								"v1",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order-lines",
+			"item": [
+				{
+					"name": "get-orderlines",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
