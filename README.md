@@ -7,7 +7,7 @@ This is a full-featured e-commerce system built using **Spring Boot 3**, **Sprin
 
 The application is composed of several microservices, each responsible for a distinct business capability. All services are loosely coupled and communicate via Kafka topics when needed.
 
-![Async Communication Diagram](diagrams/micro-services-async-communication.drawio.png)
+![Class Diagram](diagrams/micro-services-class-diagram.drawio.png)
 
 ### 📦 Microservices
 
@@ -33,6 +33,11 @@ The application is composed of several microservices, each responsible for a dis
 3. A **Kafka event** is published to notify the **Payment Service**.
 4. Once the payment is processed, a **Kafka event** notifies the **Notification Service**.
 5. Notification is sent to the customer.
+## 🧩 Architecture Diagram
+![Microsrvices Communication Diagram](diagrams/micro-services-global-architecture.drawio.png)
+
+![Async Communication Diagram](diagrams/micro-services-async-communication.drawio.png)
+
 
 ## 🧱 Design Patterns and Practices
 
@@ -41,6 +46,7 @@ The application is composed of several microservices, each responsible for a dis
 - Centralized error handling and logging.
 - Dockerized environment setup for easy deployment and testing.
 - Uses a monorepo structure to keep all microservices organized within a single workspace.
+![Domain Driven Development Diagram](diagrams/micro-services-domain-class-diagram.drawio.png)
 
 ## 🔐 Security
 
